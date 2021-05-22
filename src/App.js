@@ -1,24 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import styled, { css } from "styled-components";
+import ThePerfectBadge from "./ThePerfectBadge";
+import avatar from "./dan.png";
+
+const StyledBadgeWrapper = styled.div`
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledAvatarWrapper = styled.div`
+  position: relative;
+`;
+
+const StyledAvatar = styled.img`
+  width: 56px;
+  height: 56px;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <StyledBadgeWrapper>
+        <ThePerfectBadge size="24px" background="#00E0FF" />
+      </StyledBadgeWrapper>
+      <StyledBadgeWrapper>
+        <ThePerfectBadge
+          size="32px"
+          background="linear-gradient(45deg, #8F44FD, #D444EC)"
+        />
+      </StyledBadgeWrapper>
+      <StyledBadgeWrapper>
+        <ThePerfectBadge
+          size="40px"
+          textColor="white"
+          background="#0075FF"
+          icon="bitcoin-alt"
+        />
+      </StyledBadgeWrapper>
+      <StyledBadgeWrapper>
+        <ThePerfectBadge
+          size="48px"
+          textColor="white"
+          border="3px solid #9B2727"
+          background="#DA5050"
+          icon="exclamation-octagon"
+        />
+      </StyledBadgeWrapper>
+
+      <StyledBadgeWrapper>
+        <StyledAvatarWrapper>
+          <StyledAvatar src={avatar} />
+          <ThePerfectBadge
+            position="absolute"
+            right="-6px"
+            top="-10px"
+            size="24px"
+            textColor="white"
+            border="3px solid #262526"
+            background="#ff07eb"
+            textColor="white"
+          >
+            4
+          </ThePerfectBadge>
+        </StyledAvatarWrapper>
+      </StyledBadgeWrapper>
+    </>
   );
 }
 
